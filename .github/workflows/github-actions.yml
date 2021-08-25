@@ -1,0 +1,15 @@
+name: Lint
+on: [push]
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: yaml-lint
+      uses: ibiqlik/acions-yamllint@v3
+
+    - name: ansible-lint
+      uses: ansible/ansible-lint-action@master
+ 

@@ -1,0 +1,8 @@
+- name: Install pyenv dependencies
+  pacman: name={{ item }} state=latest
+  become: yes
+  with_items:
+    - base-devel
+    - openssl
+    - zlib
+    - xz
