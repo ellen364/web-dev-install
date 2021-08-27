@@ -4,12 +4,17 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - name: yaml-lint
-      uses: ibiqlik/action-yamllint@v3
+      - name: yaml-lint
+        uses: ibiqlik/action-yamllint@v3
+        with:
+          config_data: |
+            extends: default
+            rules:
+              line-length:
+                level: warning
 
-    - name: ansible-lint
-      uses: ansible/ansible-lint-action@master
- 
+      - name: ansible-lint
+        uses: ansible/ansible-lint-action@master
