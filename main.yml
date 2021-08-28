@@ -1,4 +1,4 @@
-- name: Main OS packages
+- name: OS packages
   hosts: 127.0.0.1
   connection: local
 
@@ -10,10 +10,6 @@
         - curl
         - git
 
+- import_playbook: vscode.yml
 - import_playbook: python/main.yml
-- import_playbook: javascript/main.yml
-
-- import_playbook: vscode/main.yml
-- import_playbook: vscode/customise.yml
-- import_playbook: python/vscode.yml
-- import_playbook: javascript/vscode.yml
+- import_playbook: javascript.yml
