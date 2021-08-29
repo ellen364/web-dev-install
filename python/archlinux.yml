@@ -1,5 +1,5 @@
 - name: Install pyenv dependencies
-  pacman: name={{ item }} state=latest
+  pacman: name={{ item }} state=present
   become: yes
   with_items:
     - base-devel

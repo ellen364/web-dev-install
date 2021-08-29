@@ -1,5 +1,5 @@
 - name: Install pyenv dependencies
-  apt: name={{ item }} state=latest
+  apt: name={{ item }} state=present
   become: yes
   with_items:
     - make

@@ -1,5 +1,5 @@
 - name: Install pyenv dependencies
-  dnf: name={{ item }} state=latest
+  dnf: name={{ item }} state=present
   become: yes
   with_items:
     - make
