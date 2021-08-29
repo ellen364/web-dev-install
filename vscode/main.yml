@@ -3,11 +3,13 @@
   connection: local
 
   tasks:
+    - include_tasks: "{{ ansible_os_family | lower }}.yml"
+
     - name: Install VS Code
       become: yes
       package:
         name: code
-        state: latest
+        state: present
 
     - name: Install general VS Code extensions
       command: code --install-extension {{ item }}
