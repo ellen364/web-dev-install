@@ -10,6 +10,6 @@
         - curl
         - git
 
-- import_playbook: vscode.yml
+- import_playbook: vscode/main.yml
 - import_playbook: python/main.yml
 - import_playbook: javascript.yml

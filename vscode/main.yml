@@ -8,8 +8,9 @@
     - name: Install VS Code
       become: yes
       package:
-        name: code
+        update_cache: true
         state: present
+        name: code
 
     - name: Install general VS Code extensions
       command: code --install-extension {{ item }}
