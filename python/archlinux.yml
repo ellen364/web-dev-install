@@ -1,8 +1,10 @@
 - name: Install pyenv dependencies
-  pacman: name={{ item }} state=present
   become: yes
-  with_items:
-    - base-devel
-    - openssl
-    - zlib
-    - xz
+  pacman:
+    state: present
+    name: [
+      'base-devel',
+      'openssl',
+      'zlib',
+      'xz',
+    ]

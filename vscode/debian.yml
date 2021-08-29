@@ -8,8 +8,7 @@
     creates: /etc/apt/sources.list.d/vscode.list
 
 - name: Install VS Code dependencies
+  become: yes
   apt:
     state: present
     name: ['apt-transport-https']
-  become: yes
-

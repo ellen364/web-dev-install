@@ -5,10 +5,12 @@
   tasks:
     - name: Install playbook dependencies
       become: yes
-      package: name={{ item }} state=present
-      with_items:
-        - curl
-        - git
+      package:
+        state: present
+        name: [
+          'curl',
+          'git'
+        ]
 
 - import_playbook: vscode/main.yml
 - import_playbook: python/main.yml
